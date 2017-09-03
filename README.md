@@ -21,10 +21,10 @@ Test for marvel using their api
       - Render a list of digital comics featuring the character ID passed from the Browse Menu.
       - Note the API will return a large amount of data. The relevant data is contained in the array at data.results.
       - At minimum, the listed digital comics should feature: 
-         - Comic Title
-         - Comic ID
-         - Release Date
-         - Issue Number (*if* issue number is greater than 0)
+         > Comic Title
+         > Comic ID
+         > Release Date
+         > Issue Number (*if* issue number is greater than 0)
 
 
 ---
