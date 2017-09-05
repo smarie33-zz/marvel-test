@@ -52,9 +52,9 @@ Test for marvel using their api
 ### NPM Commands
 
 ``` $ npm run build ```
-Runs development environment and builds the build folder
+Runs the gulp file and builds everything once
 
 ``` $ npm run start ```
-Builds and watches, re-renders on save
+Builds and watches, launches the webserver again on save
 
 
