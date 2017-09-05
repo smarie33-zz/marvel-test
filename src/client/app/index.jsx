@@ -161,7 +161,7 @@ class App extends React.Component{
 	    this.state = {
 	    	offset : 0,
 	    	characterTotal : 0,
-	    	characters: {},
+	    	characters: [],
 	    	comics: {},
 	    	dothis: "Select a letter to show the character list",
 	    	"charactersLoading": "",
@@ -185,7 +185,7 @@ class App extends React.Component{
 		let runAPIhitThisManyTimes = Math.ceil(calcLimit/highestLimit)
 		calcLimit > highestLimit ? curLimit = highestLimit : curLimit = calcLimit
 		curState.setState({comics: {}})
-		curState.setState({characters: {}})
+		curState.setState({characters: []})
 		curState.setState({comicsLoading: ""})
 		curState.setState({charactersLoading: "Loading..."})
 		//you can only retrieve up to 100 items from the api at a time
@@ -211,7 +211,8 @@ class App extends React.Component{
 				}else{
 					curState.setState({dothis: "Please select a character"})
 				}
-					curState.setState({characters: newCharacters})
+					curState.setState({characters: curState.state.characters.concat(newCharacters)})
+					console.log(curState.state.characters)
 					
 			})
 			.catch(function (error) {
