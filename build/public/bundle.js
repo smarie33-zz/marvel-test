@@ -10500,6 +10500,9 @@ var AlphabetList = function (_React$Component) {
 	return AlphabetList;
 }(_react2.default.Component);
 
+//List out all of the characters after a letter is choosen
+
+
 var CharacterListChildren = function (_React$Component2) {
 	_inherits(CharacterListChildren, _React$Component2);
 
@@ -10568,6 +10571,9 @@ var CharacterListContainer = function (_React$Component3) {
 
 	return CharacterListContainer;
 }(_react2.default.Component);
+
+//List out all the comics of a choosen character
+
 
 var ComicListChildren = function (_React$Component4) {
 	_inherits(ComicListChildren, _React$Component4);
@@ -10688,7 +10694,16 @@ var Instructions = function (_React$Component6) {
 			return _react2.default.createElement(
 				'div',
 				{ className: 'col-12 instructions' },
-				this.props.doThis
+				_react2.default.createElement(
+					'h1',
+					null,
+					'Marvel Test'
+				),
+				_react2.default.createElement(
+					'h3',
+					null,
+					this.props.doThis
+				)
 			);
 		}
 	}]);
@@ -10718,13 +10733,13 @@ var App = function (_React$Component7) {
 	}
 
 	_createClass(App, [{
-		key: 'componentDidMount',
-		value: function componentDidMount() {}
-	}, {
 		key: 'getCharactersByLetter',
 		value: function getCharactersByLetter(alphabet) {
 			var curState = this;
-			//have tried a lot to get a wildcard search so am resorting to calling the array to the total
+			//have tried a lot to get a wildcard search so am resorting to creating an array of where the positions
+			//of each letter of the alphabet are
+			//i know this is not extendable, please tell me how you guys pull content, based on letters from
+			//your api
 			// A  B  C   D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R    S    T     U   V     W    X   Y    Z
 			var letterPositions = [0, 80, 172, 272, 350, 383, 420, 475, 546, 584, 627, 662, 716, 868, 913, 933, 995, 1004, 1063, 1259, 1352, 1373, 1406, 1462, 1478, 1481];
 			var highestLimit = 100;
@@ -10739,6 +10754,9 @@ var App = function (_React$Component7) {
 			curState.setState({ characters: {} });
 			curState.setState({ comicsLoading: "" });
 			curState.setState({ charactersLoading: "Loading..." });
+			//you can only retrieve up to 100 items from the api at a time
+			//so lists with more than that move the offset and call the left
+			//over amounts
 			for (var i = 0; i < runAPIhitThisManyTimes; i++) {
 				var timestamp = new Date().getTime() / 1000;
 				var hashAll = (0, _md5build.MD5)(timestamp + _apikey2.default.myPrvKey + _apikey2.default.myPubKey);

@@ -145,7 +145,10 @@ class Instructions extends React.Component{
 	}
 	render(){
 		return(
-			<div className="col-12 instructions">{this.props.doThis}</div>
+			<div className="col-12 instructions">
+				<h1>Marvel Test</h1>
+				<h3>{this.props.doThis}</h3>
+			</div>
 		)
 	}
 }
@@ -219,7 +222,7 @@ class App extends React.Component{
 			}
 		}
 	}
-	
+
 	getCharacterInfo(comics){
 		let curState = this
 		let timestamp = new Date().getTime() / 1000
