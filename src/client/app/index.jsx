@@ -4,6 +4,7 @@ import axios from 'axios';
 import apiStuff from './apikey.js';
 import {MD5} from './md5build.js';
 import dateFormat from 'dateformat';
+import update from 'react-addons-update'; 
 
 class AlphabetList extends React.Component{
 	constructor(props) {
@@ -15,7 +16,7 @@ class AlphabetList extends React.Component{
 	}
 	render(){
 		//create a list with A to Z
-		var listAlphabet = this.state.alphabets.map((alphabet, index) =>{
+		const listAlphabet = this.state.alphabets.map((alphabet, index) =>{
 	      return (
 	      		<li 
 	      		onClick={() => {this.props.onClick(index)}}
@@ -60,7 +61,7 @@ class CharacterListContainer extends React.Component{
 		if("no" in this.props.selectedCharacters){
 			someReturn = false
 		}else{
-			for (var i = 0; i < this.props.selectedCharacters.length; i += 1) {
+			for (let i = 0; i < this.props.selectedCharacters.length; i += 1) {
 	            children.push(<CharacterListChildren onClick={this.props.onClick.bind(this)} id={this.props.selectedCharacters[i].id} key={this.props.selectedCharacters[i]. id.toString()} name={this.props.selectedCharacters[i].name} comics={this.props.selectedCharacters[i].comics.collectionURI} />);
 	        };
 	    }
@@ -124,8 +125,8 @@ class ComicsContainer extends React.Component{
 		if("no" in this.props.selectedComics){
 			someReturn = false
 		}else{
-			for (var i = 0; i < this.props.selectedComics.length; i += 1) {
-				var formateDate = dateFormat(this.props.selectedComics[i].dates[0].date, "mmm d, yyyy")
+			for (let i = 0; i < this.props.selectedComics.length; i += 1) {
+				let formateDate = dateFormat(this.props.selectedComics[i].dates[0].date, "mmm d, yyyy")
 	            comics.push(<ComicListChildren id={this.props.selectedComics[i].id} key={this.props.selectedComics[i].id.toString()} title={this.props.selectedComics[i].title} issue={this.props.selectedComics[i].issueNumber} release={formateDate} />);
 	        };
 	    }
