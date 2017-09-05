@@ -38,7 +38,6 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-util": "^3.0.8",
     "react": "^15.6.1",
-    "react-addons-update": "^15.6.0",
     "react-dom": "^15.6.1",
     "run-sequence": "^2.1.0",
     "webpack": "^3.5.5",

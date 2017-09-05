@@ -4,7 +4,6 @@ import axios from 'axios';
 import apiStuff from './apikey.js';
 import {MD5} from './md5build.js';
 import dateFormat from 'dateformat';
-import update from 'react-addons-update'; 
 
 class AlphabetList extends React.Component{
 	constructor(props) {
