@@ -1,0 +1,50 @@
+.instructions{
+	font-size: 18px;
+	border-bottom: 1px solid $black;
+	padding: 10px;
+	margin-bottom: 15px;
+	width: 100%;
+}
+
+.comic-{
+	&row{
+		border-bottom: 1px solid $black;
+		margin: 15px 0 5px 0;
+
+	}
+	&top{
+		border-bottom: 1px solid $gray;
+	}
+	&issue, &id{
+		text-align: right;
+	}
+	&issue, &date{
+		font-size: 12px;
+	}
+}
+
+ul{
+	list-style-type: none;
+	padding: 0;
+	cursor: pointer;
+	 @media screen and (max-width: $bootstrap-size-md) {
+	 	overflow-y: scroll;
+	 	height: 80px;
+	 }
+}
+
+.main-browser{
+	li{
+		@include list-button();
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+.characters{
+	li{
+		width: 100%;
+		@include list-button($red, $white);
+
+	}
+}
